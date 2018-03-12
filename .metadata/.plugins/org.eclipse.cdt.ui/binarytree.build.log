@@ -1,0 +1,15 @@
+19:46:43 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree_iterator.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator.d" -MT"src/binary_tree_iterator.o" -o "src/binary_tree_iterator.o" "../src/binary_tree_iterator.c"
+Finished building: ../src/binary_tree_iterator.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+
+19:46:44 Build Finished (took 197ms)
+

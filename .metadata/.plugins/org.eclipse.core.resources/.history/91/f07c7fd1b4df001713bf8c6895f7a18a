@@ -1,0 +1,237 @@
+/*
+ * binary_tree_node_main.c
+ *
+ *  Created on: Nov 13, 2017
+ *  Author: philip gust
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "binary_tree.h"
+
+/**
+ * Utility function to create and initiaize a TreeNodeData instance.
+ *
+ * @param val the value for the data
+ * @return the new BinaryTreeNodeData
+ */
+BinaryTreeNodeData *createBinaryTreeNodeData(const char* val) {
+	BinaryTreeNodeData* data = malloc(sizeof(BinaryTreeNodeData));
+	data->strval = val;
+	return data;
+}
+
+/*
+ * Creates the following height 0 expression tree:
+ *
+ *                   5
+ */
+BinaryTreeNode* makeExprTree0() {
+	// root node
+	BinaryTreeNodeData* rootData = createBinaryTreeNodeData("5");
+	BinaryTreeNode* root = createBinaryTreeNode(rootData);
+
+	return root;
+}
+
+/*
+ * Creates the following height 1 balanced expression tree:
+ *
+ *                   -
+ *        .----------'----------.
+ *        9                     4
+ */
+BinaryTreeNode* makeExprTree1() {
+	// root node
+	BinaryTreeNodeData* rootData = createBinaryTreeNodeData("-");
+	BinaryTreeNode* root = createBinaryTreeNode(rootData);
+
+	// left level 1
+	BinaryTreeNodeData* node10Data = createBinaryTreeNodeData("9");
+	BinaryTreeNode* node10 = createBinaryTreeNode(node10Data);
+
+	// right level 1
+	BinaryTreeNodeData* node11Data = createBinaryTreeNodeData("4");
+	BinaryTreeNode* node11 = createBinaryTreeNode(node11Data);
+
+
+	// root to left level 1
+	addBinaryTreeNodeAfter(node10, root, leftLink);
+
+	// root to right level 1
+	addBinaryTreeNodeAfter(node11, root, rightLink);
+
+	return root;
+}
+
+/*
+ * Creates the following height 1 right-heavy expression tree:
+ *
+ *                  sqr
+ *        .----------'----------.
+ *                              2
+ */
+BinaryTreeNode* makeExprTree12() {
+	// root node
+	BinaryTreeNodeData* rootData = createBinaryTreeNodeData("sqr");
+	BinaryTreeNode* root = createBinaryTreeNode(rootData);
+
+	// right level 1
+	BinaryTreeNodeData* node11Data = createBinaryTreeNodeData("2");
+	BinaryTreeNode* node11 = createBinaryTreeNode(node11Data);
+
+
+	// root to right level 1
+	addBinaryTreeNodeAfter(node11, root, rightLink);
+
+	return root;
+}
+
+/*
+ * Creates the following height 2 right-heavy expression tree:
+ *
+ *                   -
+ *        .----------'----------.
+ *        9                    sqr
+ *                         .----'----.
+ *                                   2
+ */
+BinaryTreeNode* makeExprTree22() {
+	// root node
+	BinaryTreeNodeData* rootData = createBinaryTreeNodeData("-");
+	BinaryTreeNode* root = createBinaryTreeNode(rootData);
+
+	// left level 1
+	BinaryTreeNodeData* node10Data = createBinaryTreeNodeData("9");
+	BinaryTreeNode* node10 = createBinaryTreeNode(node10Data);
+
+	// right level 1
+	BinaryTreeNodeData* node11Data = createBinaryTreeNodeData("sqr");
+	BinaryTreeNode* node11 = createBinaryTreeNode(node11Data);
+
+	// right right level 2
+	BinaryTreeNodeData* node23Data = createBinaryTreeNodeData("2");
+	BinaryTreeNode* node23 = createBinaryTreeNode(node23Data);
+
+	// root to left level 1
+	addBinaryTreeNodeAfter(node10, root, leftLink);
+
+	// root to right level 1
+	addBinaryTreeNodeAfter(node11, root, rightLink);
+
+	// level2 right right to level 1 right
+	addBinaryTreeNodeAfter(node23, node11, rightLink);
+
+	return root;
+}
+
+/**
+ * Creates the following height 3 expression tree:
+ *                    +
+ *         .----------'----------.
+ *         -                     *
+ *    .----'----.           .----'----.
+ *    9        sqr          /         7
+ *           .--'--.     .--'--.
+ *                 2     8     4
+ */
+BinaryTreeNode* makeExprTree3() {
+	// root node
+	BinaryTreeNodeData* rootData = createBinaryTreeNodeData("+");
+	BinaryTreeNode* root = createBinaryTreeNode(rootData);
+
+	// left level 1
+	BinaryTreeNodeData* node10Data = createBinaryTreeNodeData("-");
+	BinaryTreeNode* node10 = createBinaryTreeNode(node10Data);
+
+	// right level 1
+	BinaryTreeNodeData* node11Data = createBinaryTreeNodeData("*");
+	BinaryTreeNode* node11 = createBinaryTreeNode(node11Data);
+
+	// left left level 2
+	BinaryTreeNodeData* node20Data = createBinaryTreeNodeData("9");
+	BinaryTreeNode* node20 = createBinaryTreeNode(node20Data);
+
+	// right left level 2
+	BinaryTreeNodeData* node21Data = createBinaryTreeNodeData("sqr");
+	BinaryTreeNode* node21 = createBinaryTreeNode(node21Data);
+
+	// left right level 22
+	BinaryTreeNodeData* node22Data = createBinaryTreeNodeData("/");
+	BinaryTreeNode* node22 = createBinaryTreeNode(node22Data);
+
+	// right right level 2
+	BinaryTreeNodeData* node23Data = createBinaryTreeNodeData("7");
+	BinaryTreeNode* node23 = createBinaryTreeNode(node23Data);
+
+
+	// right left level 3
+	BinaryTreeNodeData* node30Data = createBinaryTreeNodeData("2");
+	node30Data->strval = "2";
+	BinaryTreeNode* node30 = createBinaryTreeNode(node30Data);
+
+	// left right level 3
+	BinaryTreeNodeData* node31Data = createBinaryTreeNodeData("8");
+	BinaryTreeNode* node31 = createBinaryTreeNode(node31Data);
+
+	// right right level 3
+	BinaryTreeNodeData* node32Data = createBinaryTreeNodeData("4");
+	BinaryTreeNode* node32 = createBinaryTreeNode(node32Data);
+
+	// root to left level 1
+	addBinaryTreeNodeAfter(node10, root, leftLink);
+
+	// root to right level 1
+	addBinaryTreeNodeAfter(node11, root, rightLink);
+
+	// level2 left left to level 1 left
+	addBinaryTreeNodeAfter(node20, node10, leftLink);
+
+	// level2 right left to level 1 left
+	addBinaryTreeNodeAfter(node21, node10, rightLink);
+
+	// level2 left right to level 1 right
+	addBinaryTreeNodeAfter(node22, node11, leftLink);
+
+	// level2 right right to level 1 right
+	addBinaryTreeNodeAfter(node23, node11, rightLink);
+
+	// level3 left left right
+	// use right for to make operator prefix for single parameter
+	addBinaryTreeNodeAfter(node30, node21, rightLink);
+
+	// level3 left left right
+	addBinaryTreeNodeAfter(node31, node22, leftLink);
+
+	// level2 right right to level 1 right
+	addBinaryTreeNodeAfter(node32, node22, rightLink);
+
+	return root;
+}
+
+/**
+ * Traversal callback counts nodes in pre-order.
+ * @param node the BinaryTreeNode
+ * @param state the traversal state
+ * @param data pointer to the int count
+ * @return true to continue crawling, false to terminate crawling
+ */
+bool countNodesInBinaryTree(BinaryTreeNode *node,
+							DepthFirstTraversalState state,
+							DepthFirstTraversalData data) {
+	// count node on entry from parent (pre-order)
+	if (state == fromParent) {
+		int *countp = data;
+		(*countp)++;
+	}
+	return true;
+}
+
+int main(void) {
+	BinaryTreeNode *root = makeExprTree3();
+	int count = 0;
+	binaryTreeTraverseDepthFirst(root, countNodesInBinaryTree, &count);
+	printf("Size of exprTree3 is %d\n", count);
+	printf("Expected size of exprTree3 is %d\n", binaryTreeSize(root));
+	return EXIT_SUCCESS;
+}

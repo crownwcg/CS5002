@@ -1,0 +1,15 @@
+11:09:02 **** Incremental Build of configuration Debug for project List ****
+make all 
+Building file: ../src/array_list.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/array_list.d" -MT"src/array_list.o" -o "src/array_list.o" "../src/array_list.c"
+Finished building: ../src/array_list.c
+ 
+Building target: List
+Invoking: MacOS X C Linker
+gcc  -o "List"  ./src/array_list.o   
+Finished building target: List
+ 
+
+11:09:02 Build Finished (took 149ms)
+

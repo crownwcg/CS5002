@@ -1,0 +1,15 @@
+12:56:11 **** Incremental Build of configuration Debug for project assignment-3 ****
+make all 
+Building file: ../src/arraylist_crawler.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/arraylist_crawler.d" -MT"src/arraylist_crawler.o" -o "src/arraylist_crawler.o" "../src/arraylist_crawler.c"
+Finished building: ../src/arraylist_crawler.c
+ 
+Building target: assignment-3
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "assignment-3"  ./src/array_deque.o ./src/array_list.o ./src/arraylist_crawler.o ./src/arraylist_crawler_main.o ./src/arraylist_iterator.o ./src/messagepriorityqueue.o   -lcunit
+Finished building target: assignment-3
+ 
+
+12:56:11 Build Finished (took 199ms)
+

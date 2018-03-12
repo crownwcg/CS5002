@@ -1,0 +1,22 @@
+12:07:09 **** Incremental Build of configuration Debug for project queue_in_stack ****
+make all 
+Building file: ../src/queue.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/queue.d" -MT"src/queue.o" -o "src/queue.o" "../src/queue.c"
+../src/queue.c:98:2: error: use of undeclared identifier 'cosnt'
+        cosnt char *str[5] = {"a", "b", "c", "d", "e"};
+        ^
+../src/queue.c:100:22: error: use of undeclared identifier 'str'
+                enqueueQueueVal(q, str[i]);
+                                   ^
+../src/queue.c:104:26: warning: incompatible pointer types passing 'const char (*)[20]' to parameter of type 'const char **' [-Wincompatible-pointer-types]
+                if (dequeueQueueVal(q, &val))
+                                       ^~~~
+../src/queue.c:48:49: note: passing argument to parameter 'val' here
+bool dequeueQueueVal(Queue *queue, const char **val) {
+                                                ^
+1 warning and 2 errors generated.
+make: *** [src/queue.o] Error 1
+
+12:07:11 Build Finished (took 1s.52ms)
+

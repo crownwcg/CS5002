@@ -1,0 +1,35 @@
+13:15:16 **** Incremental Build of configuration Debug for project HashMap ****
+make all 
+Building file: ../src/chambers_20th_century_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/chambers_20th_century_dictionary.d" -MT"src/chambers_20th_century_dictionary.o" -o "src/chambers_20th_century_dictionary.o" "../src/chambers_20th_century_dictionary.c"
+Finished building: ../src/chambers_20th_century_dictionary.c
+ 
+Building file: ../src/hash_map.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_map.d" -MT"src/hash_map.o" -o "src/hash_map.o" "../src/hash_map.c"
+Finished building: ../src/hash_map.c
+ 
+Building file: ../src/hash_map_iterator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_map_iterator.d" -MT"src/hash_map_iterator.o" -o "src/hash_map_iterator.o" "../src/hash_map_iterator.c"
+Finished building: ../src/hash_map_iterator.c
+ 
+Building file: ../src/hash_map_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_map_main.d" -MT"src/hash_map_main.o" -o "src/hash_map_main.o" "../src/hash_map_main.c"
+Finished building: ../src/hash_map_main.c
+ 
+Building file: ../src/map_entry.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/map_entry.d" -MT"src/map_entry.o" -o "src/map_entry.o" "../src/map_entry.c"
+Finished building: ../src/map_entry.c
+ 
+Building target: HashMap
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "HashMap"  ./src/chambers_20th_century_dictionary.o ./src/hash_map.o ./src/hash_map_iterator.o ./src/hash_map_main.o ./src/hashcodes.o ./src/map_entry.o   -lCUnit
+Finished building target: HashMap
+ 
+
+13:15:18 Build Finished (took 1s.410ms)
+

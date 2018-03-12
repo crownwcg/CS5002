@@ -1,0 +1,491 @@
+12:10:03 **** Incremental Build of configuration Debug for project queue_stack ****
+make all 
+Building file: ../src/queue.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/queue.d" -MT"src/queue.o" -o "src/queue.o" "../src/queue.c"
+Finished building: ../src/queue.c
+ 
+Building target: queue_stack
+Invoking: MacOS X C Linker
+gcc  -o "queue_stack"  ./src/linked_array.o ./src/linked_list.o ./src/linked_stack.o ./src/queue.o   
+Finished building target: queue_stack
+ 
+12:10:08 **** Incremental Build of configuration Debug for project assign7 ****
+make all 
+make: Nothing to be done for `all'.
+12:10:18 **** Incremental Build of configuration Debug for project queue_stack ****
+make all 
+make: Nothing to be done for `all'.
+15:17:24 **** Incremental Build of configuration Debug for project assign7 ****
+make all 
+make: Nothing to be done for `all'.
+15:55:19 **** Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree_iterator.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator.d" -MT"src/binary_tree_iterator.o" -o "src/binary_tree_iterator.o" "../src/binary_tree_iterator.c"
+Finished building: ../src/binary_tree_iterator.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+15:57:16 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+15:57:25 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+make: Nothing to be done for `all'.
+15:59:22 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:10:27 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+../src/binary_tree.c:289:3: error: use of undeclared identifier 'BinaryTreeNodeQueue'
+                BinaryTreeNodeQueue* q=
+                ^
+../src/binary_tree.c:289:24: error: use of undeclared identifier 'q'
+                BinaryTreeNodeQueue* q=
+                                     ^
+../src/binary_tree.c:290:4: warning: implicit declaration of function 'createBinaryTreeNodeQueue' is invalid in C99 [-Wimplicit-function-declaration]
+                        createBinaryTreeNodeQueue(DEFAULT_CAPACITY, DEFAULT_MAX_CAPACITY);
+                        ^
+../src/binary_tree.c:290:30: error: use of undeclared identifier 'DEFAULT_CAPACITY'
+                        createBinaryTreeNodeQueue(DEFAULT_CAPACITY, DEFAULT_MAX_CAPACITY);
+                                                  ^
+../src/binary_tree.c:290:48: error: use of undeclared identifier 'DEFAULT_MAX_CAPACITY'
+                        createBinaryTreeNodeQueue(DEFAULT_CAPACITY, DEFAULT_MAX_CAPACITY);
+                                                                    ^
+../src/binary_tree.c:291:3: warning: implicit declaration of function 'enqueueBinaryTreeNodeQueueVal' is invalid in C99 [-Wimplicit-function-declaration]
+                enqueueBinaryTreeNodeQueueVal(q, node);
+                ^
+../src/binary_tree.c:291:33: error: use of undeclared identifier 'q'
+                enqueueBinaryTreeNodeQueueVal(q, node);
+                                              ^
+../src/binary_tree.c:293:11: warning: implicit declaration of function 'isBinaryTreeNodeQueueEmpty' is invalid in C99 [-Wimplicit-function-declaration]
+                while (!isBinaryTreeNodeQueueEmpty(q)) {
+                        ^
+../src/binary_tree.c:293:38: error: use of undeclared identifier 'q'
+                while (!isBinaryTreeNodeQueueEmpty(q)) {
+                                                   ^
+../src/binary_tree.c:295:4: warning: implicit declaration of function 'dequeueBinaryTreeNodeQueue' is invalid in C99 [-Wimplicit-function-declaration]
+                        dequeueBinaryTreeNodeQueue(q, &cur);
+                        ^
+../src/binary_tree.c:295:31: error: use of undeclared identifier 'q'
+                        dequeueBinaryTreeNodeQueue(q, &cur);
+                                                   ^
+../src/binary_tree.c:298:35: error: use of undeclared identifier 'q'
+                                enqueueBinaryTreeNodeQueueVal(q, cur->linkTo[leftLink]);
+                                                              ^
+../src/binary_tree.c:301:35: error: use of undeclared identifier 'q'
+                                enqueueBinaryTreeNodeQueueVal(q, cur->linkTo[rightLink]);
+                                                              ^
+../src/binary_tree.c:310:3: warning: implicit declaration of function 'deleteBinaryTreeNodeQueue' is invalid in C99 [-Wimplicit-function-declaration]
+                deleteBinaryTreeNodeQueue(q);
+                ^
+../src/binary_tree.c:310:29: error: use of undeclared identifier 'q'
+                deleteBinaryTreeNodeQueue(q);
+                                          ^
+5 warnings and 10 errors generated.
+make: *** [src/binary_tree.o] Error 1
+19:10:40 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:16:59 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:17:09 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+make: Nothing to be done for `all'.
+19:19:16 **** Clean-only build of configuration Debug for project binarytree ****
+make clean 
+rm -rf  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o  ./src/binary_tree.d ./src/binary_tree_iterator.d ./src/binary_tree_iterator_main.d ./src/binary_tree_node.d ./src/binary_tree_node_queue.d  binarytree
+ 
+19:19:16 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building file: ../src/binary_tree_iterator.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator.d" -MT"src/binary_tree_iterator.o" -o "src/binary_tree_iterator.o" "../src/binary_tree_iterator.c"
+Finished building: ../src/binary_tree_iterator.c
+ 
+Building file: ../src/binary_tree_node.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_node.d" -MT"src/binary_tree_node.o" -o "src/binary_tree_node.o" "../src/binary_tree_node.c"
+Finished building: ../src/binary_tree_node.c
+ 
+Building file: ../src/binary_tree_node_main.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_node_main.d" -MT"src/binary_tree_node_main.o" -o "src/binary_tree_node_main.o" "../src/binary_tree_node_main.c"
+Finished building: ../src/binary_tree_node_main.c
+ 
+Building file: ../src/binary_tree_node_queue.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_node_queue.d" -MT"src/binary_tree_node_queue.o" -o "src/binary_tree_node_queue.o" "../src/binary_tree_node_queue.c"
+Finished building: ../src/binary_tree_node_queue.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:19:53 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+make: Nothing to be done for `all'.
+19:20:48 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree_node_main.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_node_main.d" -MT"src/binary_tree_node_main.o" -o "src/binary_tree_node_main.o" "../src/binary_tree_node_main.c"
+Finished building: ../src/binary_tree_node_main.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:21:52 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:22:18 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree_node_main.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_node_main.d" -MT"src/binary_tree_node_main.o" -o "src/binary_tree_node_main.o" "../src/binary_tree_node_main.c"
+Finished building: ../src/binary_tree_node_main.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:22:43 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:24:06 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:24:16 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:24:26 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:24:55 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+../src/binary_tree.c:207:2: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)' [-Wimplicit-function-declaration]
+        printf("%s\n", (char *) callbackData)
+        ^
+../src/binary_tree.c:207:2: note: include the header <stdio.h> or explicitly provide a declaration for 'printf'
+../src/binary_tree.c:207:39: error: expected ';' after expression
+        printf("%s\n", (char *) callbackData)
+                                             ^
+                                             ;
+1 warning and 1 error generated.
+make: *** [src/binary_tree.o] Error 1
+19:25:07 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+../src/binary_tree.c:207:2: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)' [-Wimplicit-function-declaration]
+        printf("%s\n", (char *) callbackData);
+        ^
+../src/binary_tree.c:207:2: note: include the header <stdio.h> or explicitly provide a declaration for 'printf'
+1 warning generated.
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:25:22 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+../src/binary_tree.c:207:2: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)' [-Wimplicit-function-declaration]
+        printf("%d\n", (int *) callbackData);
+        ^
+../src/binary_tree.c:207:2: note: include the header <stdio.h> or explicitly provide a declaration for 'printf'
+../src/binary_tree.c:207:17: warning: format specifies type 'int' but the argument has type 'int *' [-Wformat]
+        printf("%d\n", (int *) callbackData);
+                ~~     ^~~~~~~~~~~~~~~~~~~~
+2 warnings generated.
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:25:37 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+../src/binary_tree.c:207:2: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)' [-Wimplicit-function-declaration]
+        printf("%d\n", * (int *) callbackData);
+        ^
+../src/binary_tree.c:207:2: note: include the header <stdio.h> or explicitly provide a declaration for 'printf'
+1 warning generated.
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:26:01 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+../src/binary_tree.c:207:2: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)' [-Wimplicit-function-declaration]
+        printf("%s\n", (char *)node->data);
+        ^
+../src/binary_tree.c:207:2: note: include the header <stdio.h> or explicitly provide a declaration for 'printf'
+1 warning generated.
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:26:34 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+../src/binary_tree.c:207:2: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)' [-Wimplicit-function-declaration]
+        printf("%s\n", node->data->strval);
+        ^
+../src/binary_tree.c:207:2: note: include the header <stdio.h> or explicitly provide a declaration for 'printf'
+1 warning generated.
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:27:13 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+../src/binary_tree.c:207:2: warning: implicitly declaring library function 'printf' with type 'int (const char *, ...)' [-Wimplicit-function-declaration]
+        printf("%s\n", node->data->strval);
+        ^
+../src/binary_tree.c:207:2: note: include the header <stdio.h> or explicitly provide a declaration for 'printf'
+1 warning generated.
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:27:54 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:42:31 **** Clean-only build of configuration Debug for project binarytree ****
+make clean 
+rm -rf  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/binary_tree_node_main.o ./src/binary_tree_node_queue.o  ./src/binary_tree.d ./src/binary_tree_iterator.d ./src/binary_tree_node.d ./src/binary_tree_node_main.d ./src/binary_tree_node_queue.d  binarytree
+ 
+19:42:31 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building file: ../src/binary_tree_iterator.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator.d" -MT"src/binary_tree_iterator.o" -o "src/binary_tree_iterator.o" "../src/binary_tree_iterator.c"
+../src/binary_tree_iterator.c:88:64: error: too few arguments to function call, expected 2, have 1
+                prv = nxt == parentLink ? linkOfParentBinaryTreeNodeChild(cur) : parentLink;
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    ^
+../src/binary_tree.h:109:1: note: 'linkOfParentBinaryTreeNodeChild' declared here
+BinaryTreeNodeLink linkOfParentBinaryTreeNodeChild(
+^
+1 error generated.
+make: *** [src/binary_tree_iterator.o] Error 1
+19:43:09 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree_iterator.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator.d" -MT"src/binary_tree_iterator.o" -o "src/binary_tree_iterator.o" "../src/binary_tree_iterator.c"
+Finished building: ../src/binary_tree_iterator.c
+ 
+Building file: ../src/binary_tree_iterator_main.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator_main.d" -MT"src/binary_tree_iterator_main.o" -o "src/binary_tree_iterator_main.o" "../src/binary_tree_iterator_main.c"
+Finished building: ../src/binary_tree_iterator_main.c
+ 
+Building file: ../src/binary_tree_node.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_node.d" -MT"src/binary_tree_node.o" -o "src/binary_tree_node.o" "../src/binary_tree_node.c"
+Finished building: ../src/binary_tree_node.c
+ 
+Building file: ../src/binary_tree_node_queue.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_node_queue.d" -MT"src/binary_tree_node_queue.o" -o "src/binary_tree_node_queue.o" "../src/binary_tree_node_queue.c"
+Finished building: ../src/binary_tree_node_queue.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:44:02 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree_iterator.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator.d" -MT"src/binary_tree_iterator.o" -o "src/binary_tree_iterator.o" "../src/binary_tree_iterator.c"
+Finished building: ../src/binary_tree_iterator.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:45:12 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree_iterator.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator.d" -MT"src/binary_tree_iterator.o" -o "src/binary_tree_iterator.o" "../src/binary_tree_iterator.c"
+Finished building: ../src/binary_tree_iterator.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:46:17 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree_iterator.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator.d" -MT"src/binary_tree_iterator.o" -o "src/binary_tree_iterator.o" "../src/binary_tree_iterator.c"
+Finished building: ../src/binary_tree_iterator.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 
+19:46:43 **** Incremental Build of configuration Debug for project binarytree ****
+make all 
+Building file: ../src/binary_tree_iterator.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator.d" -MT"src/binary_tree_iterator.o" -o "src/binary_tree_iterator.o" "../src/binary_tree_iterator.c"
+Finished building: ../src/binary_tree_iterator.c
+ 
+Building target: binarytree
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "binarytree"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o ./src/binary_tree_node_queue.o   -lCUnit
+Finished building target: binarytree
+ 

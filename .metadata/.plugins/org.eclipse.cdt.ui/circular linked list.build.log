@@ -1,0 +1,15 @@
+13:42:38 **** Incremental Build of configuration Debug for project circular linked list ****
+make all 
+Building file: ../src/linked_list_crawler_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linked_list_crawler_main.d" -MT"src/linked_list_crawler_main.o" -o "src/linked_list_crawler_main.o" "../src/linked_list_crawler_main.c"
+Finished building: ../src/linked_list_crawler_main.c
+ 
+Building target: circular linked list
+Invoking: MacOS X C Linker
+gcc  -o "circular linked list"  ./src/linked_array.o ./src/linked_list.o ./src/linked_list_crawler.o ./src/linked_list_crawler_main.o ./src/linked_list_iterator.o   
+Finished building target: circular linked list
+ 
+
+13:42:38 Build Finished (took 235ms)
+

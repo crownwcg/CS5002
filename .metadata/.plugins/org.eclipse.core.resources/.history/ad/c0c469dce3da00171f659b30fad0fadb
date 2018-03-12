@@ -1,0 +1,109 @@
+/*
+ * tree_map_iterator.c
+ *
+ * This file provides the implementations of a HashBagIterator that
+ * iterates over the keys of a HashBag.
+ *
+ * @since 2017-03-15
+ * @author philip gust
+ */
+
+#include "hash_bag_iterator.h"
+
+#include <stdlib.h>
+#include <stdbool.h>
+
+
+/**
+ * Create and initialize a new HashBagIterator
+ *
+ * @param bag the bag
+ * @return an iterator for the specified tree bag
+ */
+HashBagIterator* createHashBagIterator(HashBag* bag) {
+	HashBagIterator* itr = (HashBagIterator*)malloc(sizeof(HashBagIterator));
+ 	itr->mapIterator     = createHashMapIterator(bag->map);
+ 	rebagHashBagIterator(itr);
+	return itr;
+}
+
+/**
+ * Freeing iterator storage.
+ *
+ * @param itr the HashBagIterator to delete
+ */
+void deleteHashBagIterator(HashBagIterator* itr) {
+	deleteHashMapIterator(itr->mapIterator);
+	itr->mapIterator = (HashMapIterator*)NULL;
+	free(itr);
+}
+
+/**
+ * Gets next key in the bag
+ *
+ * @param itr the HashBagIterator
+ * @return the next key or NULL if iterator is at end the bag
+ */
+MapKey* getNextHashBagKey(HashBagIterator* itr) {
+	return &getNextHashMapEntry(itr->mapIterator)->key;
+}
+
+/**
+ * Determines whether there is another key in the bag
+ *
+ * @param itr the HashBagIterator
+ * @return true if there is another key, false otherwise
+ */
+bool hasNextHashBagKey(HashBagIterator* itr) {
+	return hasNextHashMapEntry(itr->mapIterator);
+}
+
+/**
+ * Gets previous key in the tree bag
+ *
+ * @param itr the HashBagIterator
+ * @return the previous key or NULL if iterator is at end of list
+ */
+MapKey* getPrevHashBagKey(HashBagIterator* itr) {
+	return &getPrevHashMapEntry(itr->mapIterator)->key;
+}
+
+/**
+ * Determines whether there is a previous key in the bag.
+ *
+ * @param itr the HashBagIterator
+ * @return the previous key or NULL if iterator is at beginning of the bag
+ */
+bool hasPrevHashBagKey(HashBagIterator* itr) {
+	return hasPrevHashMapEntry(itr->mapIterator);
+}
+
+/**
+ * Rebags the iterator to the beginning of the bag.
+ *
+ * @param itr the HashBagIterator
+ * @return true if successful, false if not supported
+ */
+bool resetHashBagIterator(HashBagIterator* itr) {
+	return resetHashMapIterator(itr->mapIterator);
+}
+
+/**
+ * Returns the number of keys returned so far.
+ *
+ * @param itr the HashBagIterator
+ * @return the number of keys returned so far
+ */
+size_t getHashBagIteratorCount(HashBagIterator* itr) {
+	return getHashMapIteratorCount(itr->mapIterator);
+}
+
+/**
+ * Returns the number of keys available.
+ *
+ * @param itr the HashBagIterator
+ * @return available number of keys or UNAVAILABLE if cannot perform operation.
+ */
+size_t getHashBagIteratorAvailable(HashBagIterator* itr) {
+	return getHashMapIteratorAvailable(itr->mapIterator);
+}

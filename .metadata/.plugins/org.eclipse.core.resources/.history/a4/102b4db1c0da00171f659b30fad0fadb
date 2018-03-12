@@ -1,0 +1,174 @@
+/*
+ * tree_bag.h
+ *
+ * This file provides the implementations of a HashBag, which is
+ * a bag that is backed by a HashMap.
+ *
+ * @since 2017-03-15
+ * @author philip gust
+ */
+
+#include <stdlib.h>
+#include <stdbool.h>
+#include <strings.h>
+
+#include "hash_bag.h"
+
+#include "hash_bag_iterator.h"
+#include "hash_map.h"
+
+/**
+ * Create new empty HashBag.
+ *
+ * @return a new HashBag
+ */
+HashBag* createHashBag(void) {
+	HashBag *bag = (HashBag *) malloc(sizeof(HashBag));
+	bag->map     = createHashMap();
+	return bag;
+}
+
+/**
+ * Frees a HashBag.
+ *
+ * @param bag the HashBag to free
+ */
+void deleteHashBag(HashBag* bag) {
+	clearHashBag(bag);
+	deleteHashMap(bag->map);
+	free(bag);
+}
+
+/**
+ * Removes all of the keys from this bag.
+ *
+ * @param bag the HashBag
+ */
+void clearHashBag(HashBag* bag) {
+	clearHashMap(bag->map);
+}
+
+/**
+ * Adds the specified key to this bag if it is not already present.
+ *
+ * @param bag the HashBag
+ * @param key the entry key to check
+ * @return true if the key was added, false otherwise
+ */
+bool addHashBagKey(HashBag* bag, MapKey key) {
+	MapEntry entry = getHashMapEntry(bag->map, key);
+	if (entry != NULL) {
+		entry.value->count++;
+	} else {
+		MapValue *val = (MapValue *) malloc(sizeof(MapValue));
+		val->count    = 1;
+		putHashMapEntry(bag->map, key, val);
+	}
+	return true;
+}
+
+/**
+ * Adds all keys to this bag that are present in the other bag.
+ *
+ * @param bag the HashBag
+ * @param otherbag the other HashBag
+ * @return true if the bag was modified as a result of this call
+ */
+bool addAllHashBagKeys(HashBag* bag, HashBag* otherbag) {
+	HashBagIterator* itr = createHashBagIterator(otherbag);
+	while (hasNextHashBagKey(itr)) {
+		addHashBagKey(bag, )
+	}
+	return putAllHashMapEntries(bag->map, otherbag->map);
+}
+
+/**
+ * Returns true if this bag contains the specified key.
+ *
+ * @param bag the HashBag
+ * @param key the entry key to check
+ * @return true if the bag contains the key, false otherwise
+ */
+bool containsHashBagKey(HashBag* bag, MapKey key) {
+	return containsHashMapKey(bag->map, key);
+}
+
+/**
+ * Returns true if this bag contains all the keys from the other bag.
+ *
+ * @param bag the HashBag
+ * @param key the entry key to check
+ * @return true if the bag contains all the keys, false otherwise
+ */
+bool containsAllHashBagKeys(HashBag* bag, HashBag* otherbag) {
+	size_t otherbagSize   = getHashMapSize(otherbag->map);
+	MapKey **otherbagKeys = getHashMapKeys(otherbag->map);
+	for (int i = 0; i < otherbagSize; i++)
+		if (!containsHashBagKey(bag, *otherbagKeys[i]))
+			return false;
+	return true;
+}
+
+/**
+ * Returns the size of the bag.
+ *
+ * @param bag the HashBag
+ * @return the size of the HashBag
+ */
+size_t getHashBagSize(HashBag* bag) {
+	return getHashMapSize(bag->map);
+}
+
+/**
+ * Returns true if this bag contains no keys.
+ *
+ * @param bag the HashBag
+ * @return true of the bag is entry, false otherwise
+ */
+bool isHashBagEmpty(HashBag* bag) {
+	return isHashMapEmpty(bag->map);
+}
+
+/**
+ * Removes the specified element from this bag if it is present.
+ *
+ * @param bag the HashBag
+ * @param key the entry key to check
+ * @return true if the key was removed, false otherwise
+ */
+bool deleteHashBagKey(HashBag* bag, MapKey key) {
+	return deleteHashMapEntryForKey(bag->map, key) != NULL;
+}
+
+/**
+ * Removes all elements from this bag that are present in the other bag.
+ *
+ * @param bag the HashBag
+ * @param key the entry key to check
+ * @return true if the bag changed as a result of this call
+ */
+bool deleteAllHashBagKeys(HashBag* bag, HashBag* otherbag) {
+	size_t bagSize        = getHashMapSize(bag->map);
+	size_t otherbagSize   = getHashMapSize(otherbag->map);
+	MapKey **otherbagKeys = getHashMapKeys(otherbag->map);
+	for (int i = 0; i < otherbagSize; i++)
+		if (containsHashMapKey(bag->map, *otherbagKeys[i]))
+			deleteHashBagKey(bag, *otherbagKeys[i]);
+	return getHashMapSize(bag->map) != bagSize;
+}
+
+/**
+ * Retains only the elements in this bag that are present in the other bag.
+ *
+ * @param bag the HashBag
+ * @param key the entry key to check
+ * @return true if the bag changed as a result of this call
+ */
+bool retainAllHashBagKeys(HashBag* bag, HashBag* otherbag) {
+	size_t bagSize   = getHashMapSize(bag->map);
+	MapKey **bagKeys = getHashMapKeys(bag->map);
+	for (int i = 0; i < bagSize; i++)
+		if (!containsHashBagKey(otherbag, *bagKeys[i]))
+			deleteHashBagKey(bag, *bagKeys[i]);
+	return getHashMapSize(bag->map) != bagSize;
+}

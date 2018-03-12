@@ -1,0 +1,6 @@
+09:40:59 **** Incremental Build of configuration Debug for project binary_tree ****
+make all 
+make: Nothing to be done for `all'.
+
+09:40:59 Build Finished (took 94ms)
+

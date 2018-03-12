@@ -1,0 +1,97 @@
+/*
+ * tree_set_iterator.h
+ *
+ * This file provides the structures and function declarations of a
+ * HashBagIterator that iterates over the entries of a HashBag.
+ *
+ * @since 2017-02-15
+ * @author philip gust
+ */
+
+#ifndef HASH_BAG_ITERATOR_H_
+#define HASH_BAG_ITERATOR_H_
+
+#include <stdbool.h>
+
+#include "hash_bag.h"
+#include "hash_map_iterator.h"
+
+/**
+ * An iterator for a HashBag
+ */
+typedef struct {
+  HashMapIterator* mapIterator;
+} HashBagIterator;
+
+/**
+ * Create and initialize a new HashBagIterator
+ *
+ * @param set the set
+ * @return an iterator for the specified tree set
+ */
+HashBagIterator* createHashBagIterator(HashBag* set);
+
+/**
+ * Freeing iterator storage.
+ *
+ * @param itr the HashBagIterator to delete
+ */
+void deleteHashBagIterator(HashBagIterator* itr);
+
+/**
+ * Gets next key in the set
+ *
+ * @param itr the HashBagIterator
+ * @return the next key or NULL if iterator is at end the set
+ */
+MapKey* getNextHashBagKey(HashBagIterator* itr);
+
+/**
+ * Determines whether there is another key in the set
+ *
+ * @param itr the HashBagIterator
+ * @return true if there is another key, false otherwise
+ */
+bool hasNextHashBagKey(HashBagIterator* itr);
+
+/**
+ * Gets previous key in the tree set
+ *
+ * @param itr the HashBagIterator
+ * @return the previous key or NULL if iterator is at end of list
+ */
+MapKey* getPrevHashBagKey(HashBagIterator* itr);
+
+/**
+ * Determines whether there is a previous key in the set.
+ *
+ * @param itr the HashBagIterator
+ * @return the previous key or NULL if iterator is at beginning of the set
+ */
+bool hasPrevHashBagKey(HashBagIterator* itr);
+
+/**
+ * Resets the tree set iterator to the beginning of the set.
+ *
+ * @param itr the HashBagIterator
+ * @return true if successful, false if not supported
+ */
+bool resetHashBagIterator(HashBagIterator* itr);
+
+/**
+ * Returns the number of keys returned so far.
+ *
+ * @param itr the HashBagIterator
+ * @return the number of keys returned so far
+ */
+size_t getHashBagIteratorCount(HashBagIterator* itr);
+
+/**
+ * Returns the number of keys available.
+ *
+ * @param itr the HashBagIterator
+ * @return available number of keys or UNAVAILABLE if cannot perform operation.
+ */
+size_t getHashBagIteratorAvailable(HashBagIterator* itr);
+
+#endif /* HASH_BAG_ITERATOR_H_ */

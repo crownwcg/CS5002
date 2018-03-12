@@ -1,0 +1,55 @@
+09:29:04 **** Incremental Build of configuration Debug for project TreeMap ****
+make all 
+Building file: ../src/binary_search_tree.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_search_tree.d" -MT"src/binary_search_tree.o" -o "src/binary_search_tree.o" "../src/binary_search_tree.c"
+Finished building: ../src/binary_search_tree.c
+ 
+Building file: ../src/binary_tree.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree.d" -MT"src/binary_tree.o" -o "src/binary_tree.o" "../src/binary_tree.c"
+Finished building: ../src/binary_tree.c
+ 
+Building file: ../src/binary_tree_iterator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator.d" -MT"src/binary_tree_iterator.o" -o "src/binary_tree_iterator.o" "../src/binary_tree_iterator.c"
+Finished building: ../src/binary_tree_iterator.c
+ 
+Building file: ../src/binary_tree_node.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_node.d" -MT"src/binary_tree_node.o" -o "src/binary_tree_node.o" "../src/binary_tree_node.c"
+Finished building: ../src/binary_tree_node.c
+ 
+Building file: ../src/chambers_20th_century_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/chambers_20th_century_dictionary.d" -MT"src/chambers_20th_century_dictionary.o" -o "src/chambers_20th_century_dictionary.o" "../src/chambers_20th_century_dictionary.c"
+Finished building: ../src/chambers_20th_century_dictionary.c
+ 
+Building file: ../src/map_entry.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/map_entry.d" -MT"src/map_entry.o" -o "src/map_entry.o" "../src/map_entry.c"
+Finished building: ../src/map_entry.c
+ 
+Building file: ../src/tree_map.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tree_map.d" -MT"src/tree_map.o" -o "src/tree_map.o" "../src/tree_map.c"
+Finished building: ../src/tree_map.c
+ 
+Building file: ../src/tree_map_iterator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tree_map_iterator.d" -MT"src/tree_map_iterator.o" -o "src/tree_map_iterator.o" "../src/tree_map_iterator.c"
+Finished building: ../src/tree_map_iterator.c
+ 
+Building file: ../src/tree_map_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/tree_map_main.d" -MT"src/tree_map_main.o" -o "src/tree_map_main.o" "../src/tree_map_main.c"
+Finished building: ../src/tree_map_main.c
+ 
+Building target: TreeMap
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "TreeMap"  ./src/binary_search_tree.o ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_node.o ./src/chambers_20th_century_dictionary.o ./src/map_entry.o ./src/tree_map.o ./src/tree_map_iterator.o ./src/tree_map_main.o   -lCUnit
+Finished building target: TreeMap
+ 
+
+09:29:05 Build Finished (took 917ms)
+

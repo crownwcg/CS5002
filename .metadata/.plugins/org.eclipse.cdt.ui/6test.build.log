@@ -1,0 +1,15 @@
+17:51:25 **** Incremental Build of configuration Debug for project 6test ****
+make all 
+Building file: ../src/binary_tree_iterator_main.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/binary_tree_iterator_main.d" -MT"src/binary_tree_iterator_main.o" -o "src/binary_tree_iterator_main.o" "../src/binary_tree_iterator_main.c"
+Finished building: ../src/binary_tree_iterator_main.c
+ 
+Building target: 6test
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "6test"  ./src/binary_tree.o ./src/binary_tree_iterator.o ./src/binary_tree_iterator_main.o ./src/binary_tree_node.o   -lCUnit
+Finished building target: 6test
+ 
+
+17:51:25 Build Finished (took 263ms)
+

@@ -1,0 +1,15 @@
+12:23:41 **** Incremental Build of configuration Debug for project test7 ****
+make all 
+Building file: ../src/hash_set_main.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hash_set_main.d" -MT"src/hash_set_main.o" -o "src/hash_set_main.o" "../src/hash_set_main.c"
+Finished building: ../src/hash_set_main.c
+ 
+Building target: test7
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "test7"  ./src/hash_map.o ./src/hash_map_iterator.o ./src/hash_set.o ./src/hash_set_iterator.o ./src/hash_set_main.o ./src/map_entry.o   -lCUnit
+Finished building target: test7
+ 
+
+12:23:42 Build Finished (took 420ms)
+

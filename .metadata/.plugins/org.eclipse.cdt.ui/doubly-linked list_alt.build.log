@@ -1,0 +1,6 @@
+15:42:53 **** Incremental Build of configuration Debug for project doubly-linked list_alt ****
+make all 
+make: Nothing to be done for `all'.
+
+15:42:53 Build Finished (took 89ms)
+

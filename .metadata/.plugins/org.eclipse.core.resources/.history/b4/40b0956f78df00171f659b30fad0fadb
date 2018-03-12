@@ -1,0 +1,107 @@
+/*
+ * array_queue.c
+ *
+ * Code example of ArrayQueue for lecture 8.
+ *
+ * Operations add and delete from the front because
+ * that is more efficient for linked lists.
+ *
+ *  Created on: Oct 24, 2017
+ *  Author: philip gust
+ */
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "queue.h"
+
+/**
+ * Create an array queue with an initial capacity and max capacity.
+ *
+ * @return the allocated array queue
+ */
+Queue *createQueue(void) {
+	Queue *q    = (Queue *) malloc(sizeof(Queue));
+	q->inStack  = createLinkedStack();
+	q->outStack = createLinkedStack();
+	return q;
+}
+
+/**
+ * Enqueue value onto the queue. Cannot add NULL string to the queue.
+ * @param queue the Queue
+ * @param val the value to insert; value will be copied to store,
+ *     and cannot be null
+ * @return false if exceeds max capacity
+ */
+bool enqueueQueueVal(Queue *queue, const char *val) {
+	return pushLinkedStackVal(queue->inStack, val);
+}
+
+/**
+ * Dequeue the array queue value at the specified index.
+ * @param queue the array queue
+ * @param val result parameter is pointer to result value location;
+ *   cannot be null
+ * @return if queue is empty
+ */
+bool dequeueQueueVal(Queue *queue, const char **val) {
+	bool result = false;
+	while (!isLinkedStackEmpty(queue->inStack)) {
+		const char *sVal;
+		if (popLinkedStackVal(queue->inStack, &sVal))
+			pushLinkedStackVal(queue->outStack, sVal);
+	}
+	if (popLinkedStackVal(queue->outStack, val)) result = true;
+	while (!isLinkedStackEmpty(queue->outStack)) {
+		const char *sVal;
+		if (popLinkedStackVal(queue->outStack, &sVal))
+			pushLinkedStackVal(queue->inStack, sVal);
+	}
+	return result;
+}
+
+/**
+ * Returns number of items in the array queue.
+ * @param queue the array queue
+ * @return the number of items in the array queue.
+ */
+size_t QueueSize(Queue *queue) {
+	return linkedStackSize(queue->inStack);
+}
+
+/**
+ * Determines whether array queue is empty.
+ * @param queue the array queue
+ * @return true if array queue is empty, false otherwise
+ */
+bool isQueueEmpty(Queue *queue) {
+	return isLinkedStackEmpty(queue->inStack);
+}
+
+/**
+ * Delete the array queue . Frees copies of all strings,
+ * then the array queue, and finally the queue itself.
+ *
+ * @param queue the array queue
+ */
+void deleteQueue(Queue *queue) {
+	deleteLinkedStack(queue->inStack);
+	deleteLinkedStack(queue->outStack);
+	queue->inStack  = NULL;
+	queue->outStack = NULL;
+	free(queue);
+}
+
+int main(void) {
+	Queue *q = createQueue();
+	const char *str[5] = {"a", "b", "c", "d", "e"};
+	for (int i = 0; i < 5; i++) {
+		enqueueQueueVal(q, str[i]);
+	}
+	while (!isQueueEmpty(q)) {
+		const char val[20];
+		if (dequeueQueueVal(q, &val))
+			printf("%s\n", val);
+	}
+}
